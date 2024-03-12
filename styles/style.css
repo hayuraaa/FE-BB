@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
 :root {
-  --primaryTextColor: #232e35; /* Untuk title atau judul */
-  --secondaryTextColor: #656d72; /* Untuk text biasa seperti paragraph contohnya */
+  --primaryTextColor: #002B44; /* Untuk title atau judul */
+  --secondaryTextColor: #000000; /* Untuk text biasa seperti paragraph contohnya */
 
   --borderColor: #f1f1f1;
   --lineColor: #d9d9d9; /* untuk line di pre-title */
@@ -11,8 +11,8 @@
   --secondaryBackgroundColor: #fbfbfb;
   --thirdBackgroundColor: #f5f3fe;
 
-  --primaryIconColor: #7e74f1;
-  --primaryIconColorHover: #5d51e8;
+  --primaryIconColor: #54B0AF;
+  --primaryIconColorHover: #54B0AF;
 
   --sectionPadding: 6rem 0;
 
@@ -27,7 +27,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 h1,
@@ -124,7 +124,8 @@ a {
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
+  align-items: center;
 }
 
 nav ul {
@@ -135,10 +136,14 @@ nav ul {
 
 /* Logo */
 .logo {
+  max-width: 200px;
+  width: 100px;
   display: flex;
   align-items: center;
-  font-weight: 700;
-  font-size: 2rem;
+}
+
+.logo img {
+  width: 200%;
 }
 
 .logo a {
@@ -175,7 +180,7 @@ nav ul li a {
 
 /* Hero Section */
 #hero {
-  height: 720px;
+  height: 700px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* We're not going to use automatic template columns, because we need to know when the columns is go below. So we can exchange the order of the element */
@@ -185,11 +190,21 @@ nav ul li a {
 .hero-name {
   font-size: 3rem;
   font-weight: 700;
-  margin: 0.5rem 0 1rem;
+  margin: 0.5rem 0 0rem;
 }
 
 .hero-name span {
-  color: var(--primaryIconColor) !important;
+  color: var(--primaryTextColor) !important;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0rem 0 1rem;
+}
+
+.hero-title span {
+  color: var(--primaryIconColorHover) !important;
 }
 
 .hero-right img {
@@ -200,6 +215,28 @@ nav ul li a {
   display: flex;
   justify-content: center;
 }
+
+.start-button {
+  background-color: var(--primaryIconColor);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.detail-button {
+  color: var(--primaryIconColor);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-color: var(--primaryIconColor);
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
 
 /* Services Section */
 #services {
@@ -216,20 +253,29 @@ nav ul li a {
 }
 
 .service {
-  padding: 3rem 2rem;
+  padding: 2rem 2rem; 
   text-align: center;
-  background: var(--primaryBackgroundColor);
   border-radius: var(--itemBorderRadius);
+  color: #fff;
+  border-radius: 4%;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #54B0AF 0%, #065A92 100%);
+  
 }
 
-.service h4 {
+.service p {
+  color: #fff;
+}
+
+.service h1 {
+  color: #fff;
   margin: 1.5rem 0;
-  font-weight: 500;
-  font-size: 1.05rem;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .service-icon {
-  background: var(--thirdBackgroundColor);
+  background: transparent;
   width: fit-content;
   margin: 0 auto;
   padding: 1rem 1.3rem;
@@ -241,15 +287,30 @@ nav ul li a {
 }
 
 .service-icon {
-  background: var(--thirdBackgroundColor);
-  width: fit-content;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  max-width: 100%;
+  height: auto;
   margin: 0 auto;
   padding: 1rem 1.3rem;
   border-radius: 0.5rem;
 }
 
-.service-icon svg {
-  fill: var(--primaryIconColor);
+.service-icon img {
+  width: 70%;
+  height: auto; /* Pastikan gambar tetap proporsional */
+}
+
+.fitur-button {
+  color: var(--secondaryTextColor);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: #f1f1f1;
+  background-color: #FFAE34;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
 }
 
 /* Portfolios */
@@ -260,7 +321,7 @@ nav ul li a {
 .portfolio {
   border-radius: var(--itemBorderRadius);
   overflow: hidden; /* supaya gambar yang diatas itu dia ngikut border radiusnya, karena yang dikasih border radius disini adalah div portfolio ini */
-  border: 1px solid var(--borderColor);
+  border: 5px solid var(--borderColor);
 }
 
 .portfolio-cover {
@@ -348,6 +409,7 @@ nav ul li a {
 
 .education-info p {
   margin: 0.6rem 0 1.4rem;
+  text-align: justify;
 }
 
 .education-years {
@@ -372,10 +434,99 @@ nav ul li a {
   margin-top: 1.5rem;
 }
 
-.skills-right ul {
-  line-height: 2rem;
-  padding: 0 1rem;
+.skills-right img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 2%;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); /* Menambahkan bayangan */
 }
+
+/* geografis */
+.geografis-img {
+  margin: 2rm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.geografis-img img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* Blog Section */
+
+.blog-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.judul {
+  color: #000;
+}
+
+.blog-cover {
+  height: 250px;
+}
+
+.blog img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-info {
+  padding: 2rem 1.5rem;
+}
+
+.deskripsi-blog {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  text-align: justify;
+}
+
+.blog-detail {
+  color: var(--primaryIconColor);
+}
+
+#blogs {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.calendar-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.calendar-wrapper svg {
+  margin-right: 0.5rem;
+  /* Atur jarak antara ikon kalender dan tanggal */
+}
+
+
+/* galeries section */
+#galeries {
+  overflow: hidden;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.slider {
+  margin-top: 20px;
+}
+
+.slider img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 10px;
+}
+
 
 /* Contact Section */
 #contact {
@@ -461,20 +612,4 @@ footer {
   padding: 4rem 0;
   background: var(--secondaryBackgroundColor);
   text-align: center;
-}
-
-.footer-icons {
-  margin-bottom: 1rem;
-}
-
-.footer-icons a {
-  margin: 0 0.5rem;
-}
-
-.footer-icons svg {
-  fill: #3e3f40;
-}
-
-.footer-icons a:hover svg {
-  fill: #000;
 }
