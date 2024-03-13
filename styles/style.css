@@ -160,6 +160,10 @@ nav ul li a {
   color: var(--primaryTextColor);
 }
 
+nav ul li a:hover{
+  color: var(--primaryIconColorHover);
+}
+
 /* Burger - Save for later on video */
 .burger div {
   width: 25px;
