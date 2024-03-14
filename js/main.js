@@ -12,6 +12,13 @@ const navSlide = () => {
 
 navSlide();
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Mengatur animasi zoom in saat halaman dimuat
+  var heroSection = document.getElementById('hero');
+  heroSection.classList.add('zoom-in');
+});
+
+
 // Clear form before unload
 window.onbeforeunload = () => {
   for (const form of document.getElementsByTagName("form")) {
