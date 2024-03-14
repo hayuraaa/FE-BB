@@ -12,6 +12,7 @@ const navSlide = () => {
 
 navSlide();
 
+
 document.addEventListener('DOMContentLoaded', function () {
   // Mengatur animasi zoom in saat halaman dimuat
   var heroSection = document.getElementById('hero');

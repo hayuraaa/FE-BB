@@ -27,6 +27,7 @@
 }
 
 body {
+  line-height: 1.5; 
   font-family: "Poppins", sans-serif;
 }
 
@@ -58,6 +59,13 @@ a {
   text-decoration: none;
 }
 
+/* Initial state: zoomed out */
+.zoom-out .hero-left,
+.zoom-out .hero-right img {
+  opacity: 0;
+  transform: scale(1);
+}
+
 /* Zoom in animation */
 .zoom-in .hero-left,
 .zoom-in .hero-right img {
@@ -75,8 +83,24 @@ a {
   }
 }
 
-
 /* End Preparation */
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+
+
 
 .main-container {
   width: 1200px;
@@ -150,6 +174,7 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 3rem;
+  align-items: center;
 }
 
 /* Logo */
@@ -170,6 +195,7 @@ nav ul {
 
 /* Navigation Menu */
 nav ul li {
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -178,11 +204,13 @@ nav ul li a {
   color: var(--primaryTextColor);
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
   color: var(--primaryIconColorHover);
 }
 
+
 /* Burger - Save for later on video */
+
 .burger div {
   width: 25px;
   height: 2px;
@@ -202,7 +230,7 @@ nav ul li a:hover{
 
 /* Hero Section */
 #hero {
-  height: 700px;
+  height: 680px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* We're not going to use automatic template columns, because we need to know when the columns is go below. So we can exchange the order of the element */
@@ -234,6 +262,7 @@ nav ul li a:hover{
   transition: transform 0.3s ease;
 }
 
+
 .hero-right {
   display: flex;
   justify-content: center;
@@ -249,6 +278,7 @@ nav ul li a:hover{
   font-size: 16px;
   margin-top: 20px;
 }
+
 
 .detail-button {
   color: var(--primaryIconColor);
@@ -303,7 +333,6 @@ nav ul li a:hover{
   margin: 0 auto;
   padding: 1rem 1.3rem;
   border-radius: 0.5rem;
-  transition: transform 0.3s ease;
 }
 
 .service-icon svg {
@@ -319,7 +348,6 @@ nav ul li a:hover{
   margin: 0 auto;
   padding: 1rem 1.3rem;
   border-radius: 0.5rem;
-  
 }
 
 .service-icon img {
@@ -408,6 +436,15 @@ nav ul li a:hover{
   color: var(--secondaryTextColor);
 }
 
+/* about*/
+#about {
+  padding-top: 0.5rem;
+  padding-bottom: 5rem;
+  background: var(--secondaryBackgroundColor);
+  position: relative;
+}
+
+
 /* Skills and Education */
 #skills {
   padding: var(--sectionPadding);
@@ -442,6 +479,17 @@ nav ul li a:hover{
   text-align: justify;
 }
 
+.about-info p {
+  margin: 0.6rem 0 1.4rem;
+  text-align: justify;
+  text-indent: 20px;
+}
+
+.visimis-info p {
+  margin: 0.6rem 0 1.4rem;
+  text-align: justify;
+  margin-top: 2rem;
+}
 .education-years {
   margin-bottom: 3rem;
 }
@@ -475,6 +523,13 @@ nav ul li a:hover{
 
 .skills-right img:hover {
   transform: scale(1.1);
+}
+
+.about-feature img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 2%;
 }
 
 /* geografis */
@@ -515,7 +570,7 @@ nav ul li a:hover{
 }
 
 .blog-cover img:hover {
-  filter: brightness(70%); /* Mengurangi kecerahan gambar menjadi 80% */
+  filter: brightness(80%); /* Mengurangi kecerahan gambar menjadi 80% */
 }
 
 .blog img {
@@ -553,12 +608,42 @@ nav ul li a:hover{
   /* Atur jarak antara ikon kalender dan tanggal */
 }
 
+.title-sub {
+  display: flex;
+  justify-content: center; /* Memusatkan secara horizontal */
+  align-items: center; /* Memusatkan secara vertikal */
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+
+.title-sub img{
+  max-width: 30%;
+  height: auto;
+  margin: 0 10px;
+}
+
+.title-ha {
+  display: flex;
+  /* Memusatkan secara horizontal */
+  align-items: center;
+  /* Memusatkan secara vertikal */
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+
+.title-ha img {
+  max-width: 30%;
+  height: auto;
+  margin: 0 10px;
+}
+
 
 /* galeries section */
 #galeries {
   overflow: hidden;
   margin: auto;
   max-width: 1200px;
+  padding-bottom: 8rem;
 }
 
 .slider {
@@ -654,6 +739,178 @@ nav ul li a:hover{
 /* Footer Section */
 footer {
   padding: 4rem 0;
-  background: var(--secondaryBackgroundColor);
+  background: var(--primaryTextColor);
+  color: #fff;
+}
+
+.footer-col{
+   width: 25%;
+   padding: 0 30px;
+}
+
+.footer-col img {
+max-width: 100%;
+height: auto;
+}
+
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: var(--primaryIconColorHover);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #fff;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
   text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+.social-links img {
+  padding-top: 1.2rem;
+  max-width: 50px;
+  height: auto;
+}
+
+/*responsive*/
+@media(max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media(max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+footer p {
+  color: #fff;
+}
+
+
+/*team*/
+
+.team{
+	position: relative;
+	width: 100%;
+  background-color: #fff;
+	display: flex;
+	flex-direction: column;
+  padding-bottom: 5rem;
+  
+  
+}
+.team-content{
+	width: 100%;
+	max-width: 1350px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	align-items: center;
+	gap: 2rem;
+	text-align: center;
+}
+.team-content img{
+	width: 100%;
+	height: auto;
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+.center h1{
+	color: var(--primaryIconColor);
+	font-size: 4rem;
+	text-align: center;
+}
+.box{
+	padding: 16px;
+	background: var(--borderColor);
+	border-radius: 15px;
+	transition: all .38s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+
+}
+.box h3{
+	font-size: 23px;
+	font-weight: 600;
+	color: var(--primaryTextColor);
+	margin-bottom: 8px;
+}
+.box h5{
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--primaryTextColor);
+	margin-bottom: 15px;
+	letter-spacing: 2px;
+}
+.icons i{
+	display: inline-block;
+	color: var(--primaryTextColor);
+	font-size: 20px;
+	margin: 0 8px;
+	transition: all .38s ease;
+}
+.icons i:hover{
+	transform: scale(1.2);
+}
+.box:hover{
+	transform: translateY(-10px);
+	cursor: pointer;
+}
+
+@media(max-width: 1240px){
+	.team{
+		width: 100%;
+		height: auto;
+		padding: 90px 2%;
+	}
+	.center h1{
+		font-size: 3.2rem;
+	}
 }
