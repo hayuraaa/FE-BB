@@ -168,6 +168,7 @@ ul {
   justify-content: space-between;
   padding: 1.5rem 0;
   align-items: center;
+  background-color: #fff;
 }
 
 nav ul {
@@ -187,6 +188,7 @@ nav ul {
 
 .logo img {
   width: 200%;
+  float: left;
 }
 
 .logo a {
@@ -594,7 +596,7 @@ nav ul li a:hover {
 }
 
 #blogs {
-  padding-top: 5rem;
+  padding-top: 2rem;
   padding-bottom: 5rem;
 }
 
@@ -617,9 +619,9 @@ nav ul li a:hover {
 }
 
 .title-sub img{
-  max-width: 30%;
-  height: auto;
-  margin: 0 10px;
+max-width: 280px;
+height: auto;
+margin: 0 10px;
 }
 
 .title-ha {
@@ -635,6 +637,32 @@ nav ul li a:hover {
   max-width: 30%;
   height: auto;
   margin: 0 10px;
+}
+
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.featured-image {
+  padding: 20px;
+}
+
+.featured-image img {
+  max-width: 100%;  
+  align-self: center;
+  height: auto;
+}
+
+.post-content {
+  margin-top: 20px;
+  text-align: justify;
+  max-width: 1200px;
+  padding: 0 20px;
+  padding-bottom: 50px;
 }
 
 
@@ -844,6 +872,7 @@ footer p {
 	display: flex;
 	flex-direction: column;
   padding-bottom: 5rem;
+  margin: 1rem;
   
   
 }
@@ -913,4 +942,192 @@ footer p {
 	.center h1{
 		font-size: 3.2rem;
 	}
+}
+
+
+/* Contact Section */
+/* Contact Section */
+#penerjemah {
+  padding: var(--sectionPadding);
+}
+
+.penerjemah {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.penerjemah-left{
+  background: #fff; /* Warna latar belakang formulir */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.penerjemah-form div {
+  margin-bottom: 1.4rem;
+}
+
+.penerjemah-form input,
+.penerjemah-form textarea {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  font-family: "Roboto", sans-serif;
+  background: var(--secondaryBackgroundColor);
+  border: 1px solid #ababab;
+  border-radius: 3px;
+  resize: none;
+}
+
+.penerjemah-form input::placeholder,
+.penerjemah-form textarea::placeholder {
+  color: #ababab;
+}
+
+.penerjemah-form input:focus,
+.penerjemah-form textarea:focus {
+  outline: none;
+  border: 1px solid #ababab;
+}
+
+.btn-submit {
+  width: 20%;
+  padding: 0.75rem 1.3rem;
+  background-color: var(--primaryIconColor);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: var(--primaryIconColorHover);
+}
+
+
+.penerjemah-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.penerjemah-item-icon {
+  background: var(--thirdBackgroundColor);
+  /* padding: 0.8rem 1rem; */
+  width: 53px;
+  height: 53px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.penerjemah-item-icon svg {
+  fill: var(--primaryIconColor);
+}
+
+.penerjemah-item-detail h4 {
+  margin-bottom: 0.6rem;
+}
+
+.penerjemah-right img {
+  max-width: 80%;
+  width: auto;
+  height: auto;
+}
+
+
+.switch-container {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10px; /* Sesuaikan sesuai kebutuhan Anda */
+}
+
+.switch-button {
+    width: 30px; /* Sesuaikan sesuai kebutuhan Anda */
+    height: 30px; /* Sesuaikan sesuai kebutuhan Anda */
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    /* Anda bisa menambahkan icon atau teks di dalam tombol jika diinginkan */
+}
+
+
+
+/*pembelajaran page */
+.tmain-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Mengatur tata letak vertikal untuk mode mobile */
+}
+
+
+
+.judul-pembelajaran {
+  color: var(--primaryIconColor);
+  font-size: large;
+  font-weight: bold;
+}
+
+.pembelajaran-grid {
+  padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-sampul {
+    width: 40%;
+    margin-bottom: 20px; /* Jarak antara grid-sampul dan grid-keterangan pada mode mobile */
+    margin-right: 20px;
+}
+
+.grid-sampul img{
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.grid-sampul img:hover {
+  transform: scale(0.9);
+}
+
+.grid-keterangan {
+    width: 100%; /* Menjadi 100% lebar saat mode mobile */
+    text-align: justify;
+}
+
+/* Untuk memastikan gambar tidak melebihi lebar parent */
+.grid-sampul img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media queries untuk mode mobile */
+@media (max-width: 768px) {
+    .pembelajaran-grid {
+        flex-direction: column; /* Mengatur tata letak vertikal untuk mode mobile */
+    }
+
+    .grid-sampul {
+        width: 100%; /* Menjadi 100% lebar saat mode mobile */
+    }
+
+    .grid-keterangan {
+        width: 100%; /* Menjadi 100% lebar saat mode mobile */
+    }
+}
+
+.pembelajaran-btn {
+  background-color: var(--primaryIconColor);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
 }

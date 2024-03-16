@@ -52,3 +52,17 @@ $(document).ready(function () {
     ]
   });
 });
+
+
+// JavaScript to toggle audio element visibility
+document.addEventListener('DOMContentLoaded', function () {
+  var showAudioButtons = document.querySelectorAll('.show-audio-btn');
+
+  showAudioButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var audioElement = this.parentNode.querySelector('audio');
+      audioElement.style.display = 'block'; // Show audio element
+      this.style.display = 'none'; // Hide show audio button
+    });
+  });
+});
