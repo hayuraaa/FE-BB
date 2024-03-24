@@ -24,6 +24,8 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -164,6 +166,7 @@ ul {
 
 /* --- Logo and Navigation Menu --- */
 .nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 0;
@@ -171,23 +174,23 @@ ul {
   background-color: #fff;
 }
 
+
 nav ul {
   list-style: none;
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
 }
 
 /* Logo */
 .logo {
-  max-width: 200px;
-  width: 100px;
+  max-width: 100%;
   display: flex;
   align-items: center;
 }
 
 .logo img {
-  width: 200%;
+  width: 80%;
   float: left;
 }
 
@@ -211,6 +214,7 @@ nav ul li a:hover {
 }
 
 
+
 /* Burger - Save for later on video */
 
 .burger div {
@@ -230,9 +234,11 @@ nav ul li a:hover {
   right: 35px;
 }
 
+
+
 /* Hero Section */
 #hero {
-  height: 680px;
+  height: 600px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* We're not going to use automatic template columns, because we need to know when the columns is go below. So we can exchange the order of the element */
@@ -1080,6 +1086,10 @@ footer p {
     flex-direction: row;
 }
 
+.pembelajaran-info {
+  text-align: justify;
+}
+
 .grid-sampul {
     width: 40%;
     margin-bottom: 20px; /* Jarak antara grid-sampul dan grid-keterangan pada mode mobile */
@@ -1130,4 +1140,94 @@ footer p {
   cursor: pointer;
   font-size: 16px;
   margin-top: 20px;
+}
+
+
+/*Detail Pembelajaran */
+.judul-modul{
+padding: 1rem;
+}
+
+.judul-modul h1{
+  color: var(--primaryIconColor);
+  font-size: 2rem;
+  text-align: center;
+  
+}
+
+.copyright{
+  background-color: var(--primaryTextColor);
+  padding-bottom: 10px;
+}
+
+.copyright p{
+  color: #fff;
+  text-align: center;
+}
+
+
+
+.heros {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0; /* Atur padding sesuai kebutuhan */
+    text-align: center;
+}
+
+.page-inners {
+    display: flex;
+    justify-content: center; /* Membuat konten di tengah secara horizontal */
+    align-items: center; /* Membuat konten di tengah secara vertikal */
+    min-height: 20vh; /* Set tinggi minimum agar konten selalu di tengah */
+    text-align: center; /* Membuat teks di tengah */
+    z-index: 1;
+    
+}
+
+.overlays {
+    position: relative;
+}
+
+.overlays::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ubah opacity overlay sesuai kebutuhan */
+    z-index: -1;
+}
+
+.containers {
+    position: relative;
+    z-index: 2;
+}
+
+.headings {
+    color: #ffffff; /* Warna teks */
+    font-size: 36px; /* Ukuran font */
+    font-weight: bold; /* Ketebalan font */
+    margin-bottom: 20px; /* Jarak bawah teks */
+}
+
+
+.breadcrumbs {
+    background-color: transparent; /* Hapus background breadcrumb */
+    padding: 0; /* Hapus padding breadcrumb */
+    margin: 0; /* Hapus margin breadcrumb */
+}
+
+.breadcrumbs-item {
+    font-size: 16px; /* Ukuran font item breadcrumb */
+}
+
+.breadcrumbs-item a {
+    color: #ffffff; /* Warna teks item breadcrumb */
+    text-decoration: none; /* Hapus dekorasi teks item breadcrumb */
+}
+
+.breadcrumbs-item.active {
+    color: #ffffff; /* Warna teks item breadcrumb aktif */
 }
